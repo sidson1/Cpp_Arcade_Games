@@ -8,7 +8,9 @@
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
 
-int main(int argc, const char * argv[])
+void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y);
+size_t GetIndex(SDL_Surface* noptrSurface, int r, int c);
+int main(int argc, const char* argv[])
 {
 	if (SDL_Init(SDL_INIT_VIDEO))
 	{
@@ -20,21 +22,37 @@ int main(int argc, const char * argv[])
 	{
 		std::cout << "Window creation failed. Error: " << SDL_GetError() << std::endl;
 	}
-		SDL_Event sdlEvent;
-		bool running = true;
-		while (running)
+	SDL_Surface* noptrWindowSurface = SDL_GetWindowSurface(optrWindow);
+	uint32_t color = 0xFF0000;
+	SetPixel(noptrWindowSurface, color, SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+	SDL_UpdateWindowSurface(optrWindow);
+	SDL_Event sdlEvent;
+	bool running = true;
+	while (running)
+	{
+		while (SDL_PollEvent(&sdlEvent))
 		{
-			while (SDL_PollEvent(&sdlEvent))
+			switch (sdlEvent.type)
 			{
-				switch (sdlEvent.type)
-				{
-					case SDL_QUIT:
-						running=false;
-					break;
-				}
+			case SDL_QUIT:
+				running = false;
+				break;
 			}
 		}
+	}
 	SDL_DestroyWindow(optrWindow);
 	SDL_Quit();
 	return 0;
+}
+
+void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y)
+{
+	SDL_LockSurface(noptrWindowSurface);
+	uint32_t* pixels = (uint32_t*)noptrWindowSurface->pixels;
+	SDL_UnlockSurface(noptrWindowSurface);
+}
+
+size_t GetIndex(SDL_Surface* noptrSurface, int r, int c)
+{
+	return r * noptrSurface->w + c;
 }

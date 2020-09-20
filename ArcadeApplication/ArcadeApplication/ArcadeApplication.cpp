@@ -1,20 +1,40 @@
 // ArcadeApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+#define SDL_MAIN_HANDLED
 
 #include <iostream>
+#include <SDL.h>
 
-int main()
+const int SCREEN_WIDTH = 224;
+const int SCREEN_HEIGHT = 288;
+
+int main(int argc, const char * argv[])
 {
-    std::cout << "Hello World!\n";
+	if (SDL_Init(SDL_INIT_VIDEO))
+	{
+		std::cout << "SDL_Init failed\n";
+		return 1;
+	}
+	SDL_Window* optrWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+	if (optrWindow == nullptr)
+	{
+		std::cout << "Window creation failed. Error: " << SDL_GetError() << std::endl;
+	}
+		SDL_Event sdlEvent;
+		bool running = true;
+		while (running)
+		{
+			while (SDL_PollEvent(&sdlEvent))
+			{
+				switch (sdlEvent.type)
+				{
+					case SDL_QUIT:
+						running=false;
+					break;
+				}
+			}
+		}
+	SDL_DestroyWindow(optrWindow);
+	SDL_Quit();
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

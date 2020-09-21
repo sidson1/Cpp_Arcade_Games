@@ -5,12 +5,14 @@
 #include <iostream>
 #include <SDL.h>
 #include "Color.h"
+#include "ScreenBuffer.h"
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
 
-void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y);
-size_t GetIndex(SDL_Surface* noptrSurface, int r, int c);
+//void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y);
+//size_t GetIndex(SDL_Surface* noptrSurface, int r, int c);
+
 int main(int argc, const char* argv[])
 {
 	if (SDL_Init(SDL_INIT_VIDEO))
@@ -27,9 +29,13 @@ int main(int argc, const char* argv[])
 	SDL_PixelFormat* pixelFormat = noptrWindowSurface->format;
 	Color::InitColorFormat(pixelFormat);
 	Color c(255, 255, 0, 255);
-	std::cout << "The window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
-	uint32_t color = 0xFFFF0000;
-	SetPixel(noptrWindowSurface, Color::Orange().GetPixelColor(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	ScreenBuffer screenBuffer;
+	screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h);
+	screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
+	//std::cout << "The window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
+	//uint32_t color = 0xFFFF0000;
+	//SetPixel(noptrWindowSurface, Color::Orange().GetPixelColor(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	SDL_UpdateWindowSurface(optrWindow);
 	SDL_Event sdlEvent;
 	bool running = true;

@@ -1,5 +1,4 @@
 ﻿  ArcadeApplication.cpp
-  Color.cpp
+  ScreenBuffer.cpp
   Generating Code...
-  LINK : E:\Github\Cpp_Arcade_Games\ArcadeApplication\Debug\ArcadeApplication.exe not found or not built by the last incremental link; performing full link
   ArcadeApplication.vcxproj -> E:\Github\Cpp_Arcade_Games\ArcadeApplication\Debug\ArcadeApplication.exe

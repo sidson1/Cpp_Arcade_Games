@@ -348,3 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+ArcadeApplication/.vs/ArcadeApplication/v16/.suo
+ArcadeApplication/.vs/ArcadeApplication/v16/Browse.VC.db
+ArcadeApplication/ArcadeApplication/Debug/ArcadeAp.5201daa8.tlog/ArcadeApplication.write.1u.tlog
+ArcadeApplication/ArcadeApplication/Debug/ArcadeAp.5201daa8.tlog/CL.read.1.tlog
+ArcadeApplication/ArcadeApplication/Debug/ArcadeAp.5201daa8.tlog/CL.write.1.tlog
+ArcadeApplication/ArcadeApplication/Debug/ArcadeAp.5201daa8.tlog/link.read.1.tlog
+ArcadeApplication/ArcadeApplication/Debug/ArcadeApplication.log

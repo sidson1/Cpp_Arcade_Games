@@ -6,16 +6,22 @@
 #include <SDL.h>
 #include "Color.h"
 #include "ScreenBuffer.h"
+#include "Screen.h"
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
+const int MAGNIFICATION = 2;
 
 //void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y);
 //size_t GetIndex(SDL_Surface* noptrSurface, int r, int c);
 
 int main(int argc, const char* argv[])
 {
-	if (SDL_Init(SDL_INIT_VIDEO))
+	Screen theScreen;
+	theScreen.Init(SCREEN_WIDTH, SCREEN_HEIGHT, MAGNIFICATION);
+	theScreen.Draw(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, Color::Yellow());
+	theScreen.SwapScreens();
+	/*if (SDL_Init(SDL_INIT_VIDEO))
 	{
 		std::cout << "SDL_Init failed\n";
 		return 1;
@@ -28,15 +34,15 @@ int main(int argc, const char* argv[])
 	SDL_Surface* noptrWindowSurface = SDL_GetWindowSurface(optrWindow);
 	SDL_PixelFormat* pixelFormat = noptrWindowSurface->format;
 	Color::InitColorFormat(pixelFormat);
-	Color c(255, 255, 0, 255);
-	ScreenBuffer screenBuffer;
-	screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h);
-	screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
+	Color c(255, 255, 0, 255);*/
+	//ScreenBuffer screenBuffer;
+	//screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h);
+	/*screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);*/
+	//SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
 	//std::cout << "The window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
 	//uint32_t color = 0xFFFF0000;
 	//SetPixel(noptrWindowSurface, Color::Orange().GetPixelColor(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	SDL_UpdateWindowSurface(optrWindow);
+	//SDL_UpdateWindowSurface(optrWindow);
 	SDL_Event sdlEvent;
 	bool running = true;
 	while (running)
@@ -51,8 +57,8 @@ int main(int argc, const char* argv[])
 			}
 		}
 	}
-	SDL_DestroyWindow(optrWindow);
-	SDL_Quit();
+	//SDL_DestroyWindow(optrWindow);
+	//SDL_Quit();
 	return 0;
 }
 

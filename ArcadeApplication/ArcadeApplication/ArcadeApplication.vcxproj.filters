@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{198e4a88-5706-4b42-acaf-934262eb2899}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Shapes">
+      <UniqueIdentifier>{8581bb13-df42-4a94-8e5a-43c011d9ed2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArcadeApplication.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Line2D.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h">
@@ -54,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Line2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

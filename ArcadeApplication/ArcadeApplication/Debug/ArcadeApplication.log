@@ -1,4 +1,12 @@
-﻿  Screen.cpp
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(66,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(66,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  ArcadeApplication.cpp
+  Color.cpp
+  Screen.cpp
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(68,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(68,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(78,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(79,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(80,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(81,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  ScreenBuffer.cpp
+  Generating Code...
   ArcadeApplication.vcxproj -> E:\Github\Cpp_Arcade_Games\ArcadeApplication\Debug\ArcadeApplication.exe

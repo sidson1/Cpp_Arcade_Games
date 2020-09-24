@@ -62,7 +62,7 @@ void Screen::FillPoly(const std::vector<Vec2D>& points, const Color& color)
 				j = i;
 			}
 			std::sort(nodeXVec.begin(), nodeXVec.end(), std::less<>());
-			for (size_t k = 0; k < nodeXVec.size(); k+=2)
+			for (size_t k = 0; k < nodeXVec.size(); k += 2)
 			{
 				if (nodeXVec[k] > right)
 				{
@@ -111,7 +111,8 @@ SDL_Window* Screen::Init(uint32_t width, uint32_t height, uint32_t mag)
 	if (moptrWindow)
 	{
 		mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
-		SDL_PixelFormat* pixelFormat = mnoptrWindowSurface->format;
+		//SDL_PixelFormat* pixelFormat = mnoptrWindowSurface->format;
+		SDL_PixelFormat* pixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
 		Color::InitColorFormat(pixelFormat);
 		mClearColor = Color::Black();
 		mBackBuffer.Init(pixelFormat->format, mWidth, mHeight);

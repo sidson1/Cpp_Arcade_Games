@@ -1,14 +1,5 @@
-﻿  Screen.cpp
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(44,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(83,22): warning C4244: 'initializing': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(149,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(149,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(159,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(160,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(161,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Screen.cpp(162,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+﻿  Color.cpp
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Color.cpp(21,55): warning C4244: 'argument': conversion from 'float' to 'uint8_t', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Color.cpp(22,59): warning C4244: 'argument': conversion from 'float' to 'uint8_t', possible loss of data
+E:\Github\Cpp_Arcade_Games\ArcadeApplication\ArcadeApplication\Color.cpp(23,57): warning C4244: 'argument': conversion from 'float' to 'uint8_t', possible loss of data
   ArcadeApplication.vcxproj -> E:\Github\Cpp_Arcade_Games\ArcadeApplication\Debug\ArcadeApplication.exe

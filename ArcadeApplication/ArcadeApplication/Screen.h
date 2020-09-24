@@ -12,6 +12,10 @@ struct SDL_Surface;
 class Vec2D;
 class Line2D;
 
+class Triangle;
+class AARectangle;
+class Circle;
+
 class Screen
 {
 private:
@@ -38,6 +42,9 @@ public:
 	void Draw(int x, int y, const Color& color);
 	void Draw(const Vec2D& point, const Color& color);
 	void Draw(const Line2D& line, const Color& color);
+	void Draw(const Triangle& triangle, const Color& color);
+	void Draw(const AARectangle& rectangle, const Color& color);
+	void Draw(const Circle& circle, const Color& color);
 };
 
 #endif // !GRAPHICS_SCREEN_H
